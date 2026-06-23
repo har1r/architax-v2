@@ -38,7 +38,7 @@ Sistem memetakan 5 role yang masing-masing bertanggung jawab pada satu fase alur
 
 | No | Role | Fase | Tanggung Jawab Utama (Aksi) |
 |---|---|---|---|
-| 1 | **PENGINPUT** | Fase 1 — Penerimaan Data | Menerima dokumen permohonan fisik dan menginput data awalnya. Dapat melakukan *Update* data selama status Permohonan `SUBMITTED` dan belum terikat `bundleId`. |
+| 1 | **PENGINPUT** | Fase 1 — Penerimaan & Penginputan Data | Menerima dokumen permohonan fisik dan menginput data permohonan tersebut secara lengkap. Dapat melakukan *Update* data selama status Permohonan `SUBMITTED` dan belum terikat `bundleId` atau `REVISION`. |
 | 2 | **PENELITI** | Fase 2 — Verifikasi & Pengelompokan | Membuat Bundle baru (`DRAFT`), memverifikasi kesesuaian berkas, mencentang permohonan untuk dimasukkan ke Bundle, mencetak Surat Pengantar Bundle (serta Kertas Kerja khusus untuk layanan Mutasi Sebagian), menyusun fisik ke map, dan mengunci Bundle. Berwenang menekan tombol "Minta Revisi" dan menggunakan fitur "Keluarkan dari Bundle". |
 | 3 | **PENGARSIP** | Fase 3 — Digitalisasi | Memindai fisik dokumen dari dalam map menjadi Arsip Digital (PDF) dan mengunggahnya. Berwenang menggunakan fitur "Unbundle" jika dokumen fisik cacat saat pemindaian. |
 | 4 | **PENGIRIM** | Fase 4 — Logistik | Membuat Manifest (`DRAFT`), memasukkan Bundle ke Manifest, mencetak Surat Pengantar Manifest, menyegel kardus, mengunci Manifest, dan mengunggah Bukti Tanda Terima. Berwenang menggunakan fitur "Revisi Manifest" dan "Laporkan Bundle Hilang". |
@@ -54,6 +54,7 @@ Sistem terdiri dari 3 entitas utama, masing-masing memiliki *state machine* inde
 
 | Status | Definisi |
 |---|---|
+| `DARFT` | Permohonan masih dalam tahap penyusunan atau belum disubmit secara resmi ke sistem. Data masih dapat dibuat, diubah, atau dihapus oleh penginput.|
 | `SUBMITTED` | Berkas dan data awal diterima, menunggu penelitian. |
 | `REVISION` | Berkas dikembalikan karena tidak lengkap/tidak valid. Penginput memiliki hak akses untuk mengubah data. |
 | `BUNDLED` | Permohonan valid dan dikunci ke dalam Bundle. |
