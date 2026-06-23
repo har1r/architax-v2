@@ -10,14 +10,14 @@
 | **Judul Dokumen** | PRD — Sistem Pengarsipan dan Pengelolaan Permohonan Layanan Pajak Bumi dan Bangunan (Architax) |
 | **Modul** | Pengarsipan & Pengelolaan Permohonan Layanan Pajak Bumi dan Bangunan |
 | **Status** | Final |
-| **Sumber** | Cetak Biru (Blueprint) Final & Komprehensif — Tata Usaha Pengarsipan Pendapatan Daerah Sipetra |
+| **Sumber** | Cetak Biru (Blueprint) Final & Komprehensif — Sistem Pengarsipan dan Pengelolaan Permohonan Layanan Pajak Bumi dan Bangunan — Architax |
 | **Tanggal** | 22 Juni 2026 |
 
 ---
 
 ## 2. Product Overview & Objective
 
-Sistem Sipetra dibangun di atas tiga entitas utama yang saling berhubungan, yaitu **Permohonan**, **Bundle**, dan **Manifest**. Satu Manifest dapat berisi banyak Bundle, dan satu Bundle dapat berisi banyak Permohonan.
+Sistem Architax dibangun di atas tiga entitas utama yang saling berhubungan, yaitu **Permohonan**, **Bundle**, dan **Manifest**. Satu Manifest dapat berisi banyak Bundle, dan satu Bundle dapat berisi banyak Permohonan.
 
 *State Machine* pada sistem menggambarkan keadaan aktual objek (bukan aktivitas pengguna), sehingga setiap entitas (Permohonan, Bundle, Manifest) memiliki status independen masing-masing.
 
